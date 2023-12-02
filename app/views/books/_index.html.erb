@@ -29,6 +29,9 @@
               <i class="fa-solid fa-heart" style="color: light blue;"><%= book.favorites.count %></i>
               <% end %>
             </td>
+            <td>
+              <p>コメント件数：<%= @book.post_comments.count %></p>
+            </td>
             <% end %>
       </tr>
     <% end %>
