@@ -7,6 +7,8 @@
   <tr>
 	  <th>introduction</th>
 	  <th><%= user.introduction %></th>
+	  <th><%= link_to follows index_follws_paht @user.followings.count %></th>
+	  <th><%= link_to followers index_follwers_paht @user.followings.count %></th>
   </tr>
 </table>
 
