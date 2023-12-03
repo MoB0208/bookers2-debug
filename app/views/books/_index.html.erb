@@ -14,25 +14,10 @@
           <%= image_tag book.user.get_profile_image, size:'50x50' %>
           <% end %>
         </td>
-        <td><%= link_to book.title,book %></td>
+        <td><%= link_to book.title,book, class: "book_#{book.id}" %></td>
         <td><%= book.body %></td>
-
-        <% if book.favorited_by?(current_user) %>
-            <td>
-              <%= link_to book_favorite_path(book), method: :delete do %>
-              <i class="fa-solid fa-heart" style="color: red;"><%= book.favorites.count %></i>
-            　<% end %>
-            </td>
-            <% else %>
-            <td>
-              <%= link_to book_favorite_path(book), method: :post do %>
-              <i class="fa-solid fa-heart" style="color: light blue;"><%= book.favorites.count %></i>
-              <% end %>
-            </td>
-            <td>
-              <p>コメント件数：<%= @book.post_comments.count %></p>
-            </td>
-            <% end %>
+        <td><%= render "favorites/btn", book: book %></td>
+        <td>コメント数: <%= book.book_comments.count %></td>
       </tr>
     <% end %>
   </tbody>
