@@ -63,14 +63,6 @@ ActiveRecord::Schema.define(version: 2023_12_02_192816) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "post_comments", force: :cascade do |t|
-    t.text "comment"
-    t.integer "user_id"
-    t.integer "book_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
